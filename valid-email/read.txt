@@ -1,0 +1,13 @@
+1. pom
+<!--				//mail 1-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+    
+2. ValidEmail.java
+3.EmailValidator.java
+4. call api :   @ValidEmail
+    @ValidEmail
+    @Column(name = "email", length = 200, unique = true, nullable = false)
+    private String email;
