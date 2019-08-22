@@ -1,0 +1,25 @@
+1. pom xml
+
+<!--   valid password -->
+		<dependency>
+			<groupId>org.passay</groupId>
+			<artifactId>passay</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>r05</version>
+		</dependency>
+
+2. valid.java
+3. PasswordConstraintValidator.java
+4. cara call, kasih @ValidPassword pada entity
+    @ValidPassword //validasi password
+    private String password;  
+    
+5. sukses
