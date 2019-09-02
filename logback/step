@@ -24,4 +24,14 @@ logging.level.net.guides=DEBUG
 
 3. logback.xml
 
-4. 
+4.  call in applikasi 
+  Logger logger = LoggerFactory.getLogger(UserHeadControl.class);
+     
+    @GetMapping("userhead/{id}")
+    public ResponseEntity<Map> userheads(@PathVariable("id") Long id ){
+    System.out.println("say masukkk");
+        Map c = servis.findById(id);
+
+        logger.info("info dari ="+c); //pangil disini
+        return new ResponseEntity<Map>(c, HttpStatus.OK);
+    }
