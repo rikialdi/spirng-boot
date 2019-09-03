@@ -1,0 +1,7 @@
+1. multi dan json
+@RequestMapping(value = "/upload2/{id}", method = RequestMethod.POST, consumes = { "multipart/form-data", "application/json" })
+    public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file, @PathVariable("id") Long id,@RequestPart(value = "subject", required = true) String obj ) throws IOException{
+    }
+2. pada postman 
+file dan subject
+kekurangan : saya coba tidak bisa objek
