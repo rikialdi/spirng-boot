@@ -1,0 +1,35 @@
+1. a. param map normal 
+  ap map = new HashMap();
+  map.put("flag", flag_sukses);
+  map.put("userdata", c);
+  
+  b. hasil 
+  {
+    "userdata": {
+        "createdAt": "2018-01-01T00:00:00.000+0000",
+        "updatedAt": "2019-09-03T06:34:13.491+0000",
+        "id": 1,
+        "id_user": 1,
+        "nama": "nama 1",
+        "alamat": "alamta",
+        "no_hp": "234",
+        "email": "riki@gmail.com",
+        "franchise_alamat": "almat",
+        "franchise_desc": "tes4",
+        "status": "233",
+        "attachment": "/home/tog/toggit/pgadmin.log"
+    },
+    "flag": "0"
+}
+  
+  c. cetak java
+    Map map = servis.findById(id);
+     if(map.get("flag").equals(flag_eror)) {
+            return new ResponseEntity<Map>(map, HttpStatus.OK);
+        }else{
+
+            //cetak
+            UserDetail responseJSONString = (UserDetail) map.get("userdata");
+            System.out.println("res====="+responseJSONString.getNama());
+            System.out.println("res====="+responseJSONString.getId());
+            System.out.println("res====="+responseJSONString.getCreatedAt());
