@@ -55,3 +55,14 @@
   public class Response {
     UserHead userhead;
   }
+  
+4. cetak map for
+   public static void showLog(Map<String, Object> map, String title) {
+        System.out.println("Process : " + title);
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            System.out.println(key + " : " + value);
+        }
+        System.out.println("========================");
+    }
