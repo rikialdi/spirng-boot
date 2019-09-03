@@ -85,5 +85,11 @@
             System.out.println(s.getId());
             System.out.println(s.getNama());
         }
+3. Proses pirnt yang simple 
+       JSONObject json = new JSONObject(c);
+        System.out.println("print element="+json);
+        System.out.println( "access_token="+json.getString("access_token"));
+        System.out.println( "refresh_token="+json.getString("refresh_token"));
+        
 
       
