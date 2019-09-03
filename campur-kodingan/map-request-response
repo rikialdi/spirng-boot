@@ -33,3 +33,57 @@
             System.out.println("res====="+responseJSONString.getNama());
             System.out.println("res====="+responseJSONString.getId());
             System.out.println("res====="+responseJSONString.getCreatedAt());
+     
+2. a. request data MAP list
+       List<UserDetail> list= new ArrayList<UserDetail>();
+        Map map = new HashMap();
+          list= repo.getList();
+          if(list != null){
+                map.put("listdata", list);
+                return map;
+            }
+      
+    b. response
+       {
+    "listdata": [
+        {
+            "createdAt": "2018-01-01T00:00:00.000+0000",
+            "updatedAt": "2019-09-03T06:34:13.491+0000",
+            "id": 1,
+            "id_user": 1,
+            "nama": "nama 1",
+            "alamat": "alamta",
+            "no_hp": "234",
+            "email": "riki@gmail.com",
+            "franchise_alamat": "almat",
+            "franchise_desc": "tes4",
+            "status": "233",
+            "attachment": "/home/tog/toggit/pgadmin.log"
+        },
+        {
+            "createdAt": "2018-01-01T00:00:00.000+0000",
+            "updatedAt": "2018-01-01T00:00:00.000+0000",
+            "id": 2,
+            "id_user": 2,
+            "nama": "3aaa",
+            "alamat": "a 3",
+            "no_hp": "4",
+            "email": "test",
+            "franchise_alamat": "a",
+            "franchise_desc": "ter",
+            "status": "5",
+            "attachment": null
+        }
+    ]
+}
+  
+  c. cetak java
+       Map c = servis.loadAllUserDetail();
+        List<UserDetail> list= (List<UserDetail>) c.get("listdata");
+
+        for(UserDetail s :list ){
+            System.out.println(s.getId());
+            System.out.println(s.getNama());
+        }
+
+      
