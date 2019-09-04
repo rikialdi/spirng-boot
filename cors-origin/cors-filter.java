@@ -71,7 +71,7 @@ get ouath
 var login_data = {username: "admin@mail.com", password: "password", grant_type: "password", client_id:"my-client-id", client_secret: "password"}
 $.ajax({
  crossDomain: true,
- url: "http://192.168.1.207:8124/api/oauth/token",
+ url: "http://api/api/oauth/token",
  type: "POST",
  headers: {
    "Content-Type": "application/json",
@@ -83,7 +83,6 @@ $.ajax({
 }).done(function (response) {
  console.log(response);
 });
-
-: http://182.16.178.172/pos-kawasaki-version-2/login
+ 
      */
 }
