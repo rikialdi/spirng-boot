@@ -25,6 +25,8 @@ logging.level.net.guides=DEBUG
 3. logback.xml
 
 4.  call in applikasi 
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
   Logger logger = LoggerFactory.getLogger(UserHeadControl.class);
      
     @GetMapping("userhead/{id}")
