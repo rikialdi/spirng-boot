@@ -1,0 +1,66 @@
+package com.bawahtangga.Test;
+
+import com.mashape.unirest.http.HttpResponse;
+import com.mashape.unirest.http.JsonNode;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import org.apache.commons.codec.binary.Base64;
+import org.json.JSONObject;
+import org.junit.Test;
+import org.springframework.web.client.RestTemplate;
+
+import java.net.URISyntaxException;
+
+
+public class junit {
+    @Test
+    public void testGetEmployeeListSuccess() throws URISyntaxException, UnirestException {
+        RestTemplate restTemplate = new RestTemplate();
+        String webPage = "http://localhost:8083/api/oauth/token";
+        String name = " ";
+        String password = "";
+
+        String authString = name + ":" + password;
+        System.out.println("auth string: " + authString);
+        byte[] authEncBytes = Base64.encodeBase64(authString.getBytes());
+        String authStringEnc = new String(authEncBytes);
+        System.out.println("Base64 encoded auth string: " + authStringEnc);
+//ini bisa
+//        JsonNode jsonResponse = Unirest.post("http://localhost:8083/api/oauth/token")
+////                .header("Content-Type", "application/json")
+////                .header("Content-Type", "application/x-www-form-urlencoded")
+//                .header("authorization", "Basic "+authStringEnc)
+////                .header("authorization", "Basic ZGliYXdhaHRhbmdnYS1yZWFkLXdyaXRlLWNsaWVudDpzcHJpbmctc2VjdXJpdHktb2F1dGgyLXJlYWQtd3JpdGUtY2xpZW50LXBhc3N3b3JkMTIzNA==")
+//
+//                .field("grant_type", "password")
+//                .field("username", "admin@gmail.com")
+//                .field("password", "admin1234")
+//                .field("client_id", " ")
+//                .asJson()
+//                .getBody();
+        HttpResponse<JsonNode> jsonResponse= Unirest.post("http://localhost:8083/api/oauth/token")
+
+//                JsonNode jsonResponse = Unirest.post("http://localhost:8083/api/oauth/token")
+//                .header("Content-Type", "application/json")
+//                .header("Content-Type", "application/x-www-form-urlencoded")
+                .header("authorization", "Basic "+authStringEnc)
+//                .header("authorization", "Basic ZGliYXdhaHRhbmdnYS1yZWFkLXdyaXRlLWNsaWVudDpzcHJpbmctc2VjdXJpdHktb2F1dGgyLXJlYWQtd3JpdGUtY2xpZW50LXBhc3N3b3JkMTIzNA==")
+
+                .queryString("grant_type", "password")
+                .queryString("username", "admin@gmail.com")
+                .queryString("password", "admin1234")
+                .queryString("dibawahtangga-read-write-client", "dibawahtangga-read-write-client")
+                .asJson();
+
+//        Gson gson = new Gson();
+        String responseJSONString = jsonResponse.getBody().toString();
+        JSONObject re = jsonResponse.getBody().getObject();
+//        MyResponseObject myObject = gson.fromJson(responseJSONString, String.class);
+        System.out.println( "access_token="+re.getString("access_token"));
+        System.out.println( "refresh_token="+re.getString("refresh_token"));
+        System.out.println( "scope="+re.getString("scope"));
+        System.out.println( "token_type="+re.getString("token_type"));
+        System.out.println("=="+ jsonResponse.getBody().toString());
+//        return ;
+    }
+}
