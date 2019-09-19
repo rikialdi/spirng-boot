@@ -1,0 +1,5 @@
+ 1.  Optional : 
+ Optional<UserHead> ss = repo.findById(id);
+    map.put("URI =", APIURI+"@GetMapping(\"user/{id}\")");
+    map.put("Request =", id);
+//    map.put("Response =",ss);  // karna ada ini, jadi erorrrrrrrrrrr
