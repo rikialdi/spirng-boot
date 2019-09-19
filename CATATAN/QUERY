@@ -1,0 +1,7 @@
+2. ganti unique, 
+ALTER TABLE gp_oauth_user
+DROP CONSTRAINT email;
+
+2. delete colum
+ALTER TABLE dt_user_detail
+DROP  email; 
