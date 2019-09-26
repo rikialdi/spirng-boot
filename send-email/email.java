@@ -26,6 +26,10 @@ spring.mail.properties.mail.smtp.starttls.enable=true
 #spring.mail.properties.mail.smtp.socketFactory.class = javax.net.ssl.SSLSocketFactory
 
 class
+
+@Autowired
+    private JavaMailSender sender;
+
  MimeMessage message = sender.createMimeMessage();
 
 // Enable the multipart flag!
