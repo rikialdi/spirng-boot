@@ -3,3 +3,5 @@
     map.put("URI =", APIURI+"@GetMapping(\"user/{id}\")");
     map.put("Request =", id);
 //    map.put("Response =",ss);  // karna ada ini, jadi erorrrrrrrrrrr
+
+2. jagan pakai lombok, ada type data yg tidak support
