@@ -1,0 +1,10 @@
+@GetMapping("location")
+@ResponseBody
+public ResponseEntity<Map> getAction(@RequestParam(value = "location", required = true) String location) {
+        System.out.println("ss="+location);
+    Map map = new HashMap();
+        Long ll= Long.valueOf(1);
+    Bca_video cc= repo.getbyID(ll);
+    map.put("Response =", cc);
+    return new ResponseEntity<Map>(map, HttpStatus.OK);
+}
