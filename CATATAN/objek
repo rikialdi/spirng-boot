@@ -16,3 +16,8 @@
 
 
         }
+
+
+@Query(value = "SELECT s.jawababn FROM \"bca_interview\" s WHERE s.jawaban = ?1 LIMIT 1", nativeQuery = true)
+    String getValueByVariableName(@Param("jawaban") String jawaban);
+    native queri
