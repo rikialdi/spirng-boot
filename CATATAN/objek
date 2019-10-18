@@ -1,0 +1,18 @@
+ List<Object[]> getid = repoLogInterview.getdataP();
+        List<BcaINterviewVideoModel> res = new ArrayList<>();
+
+        Map map = new HashMap();
+
+        for(Object[] aa : getid){
+            BcaINterviewVideoModel ambil = new BcaINterviewVideoModel();
+            BcaLogInterviewVideo bb = (BcaLogInterviewVideo) aa[0];
+
+            ambil.setId_interview(bb.getId());
+            ambil.setIs_answer(bb.getIs_answer());
+            ambil.setJawaban(bb.getJawaban());
+            ambil.setTotal_waktu_jawab(bb.getTotal_waktu_jawab());
+            ambil.setTotal_waktu_persoal(bb.getTotal_waktu_persoal());
+            res.add(ambil);
+
+
+        }
