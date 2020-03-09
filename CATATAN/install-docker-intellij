@@ -1,0 +1,22 @@
+run intellij dokcer
+1. install plugin bashSUpport
+file > setting > plugin > bashSUpport
+
+2. run/debug configuration:
+ pilih bash > add(+) > 
+   a. restart spring
+      script :  docker-compose restart spring
+      interpreter path : /bin/bash
+      interpreter options : -c
+   
+   b. compile spring
+      script :  docker-compose up --force-recreate spring
+      interpreter path : /bin/bash
+      interpreter options : -c  
+      
+   c. logs spring
+      script :  docker-compose logs -f spring
+      interpreter path : /bin/bash
+      interpreter options : -c  
+      
+     
